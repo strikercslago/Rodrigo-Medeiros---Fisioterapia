@@ -1,0 +1,43 @@
+/* Edge-to-edge photo beside a locally clipped, viewport-fixed texture. */
+.contact.section {
+  padding: 0;
+  gap: 0;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  clip-path: none;
+  background: var(--wine);
+}
+.contact::before { content: none; }
+.contact .contact-image { position: relative; height: auto; min-height: 640px; }
+.contact .contact-image img { position: absolute; inset: 0; object-fit: cover; object-position: 58% center; }
+.contact-copy {
+  position: relative;
+  isolation: isolate;
+  clip-path: inset(0);
+  padding: clamp(60px, 5.5vw, 106px) clamp(32px, 4.5vw, 86px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+}
+.contact-copy::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: url('assets/contato-marmore.png') center / cover no-repeat;
+}
+.contact-copy .contact-details { width: 100%; flex-wrap: wrap; gap: 24px 32px; }
+@media (max-width: 1000px) and (min-width: 761px) {
+  .contact-copy { padding: 56px 32px; }
+  .contact-copy h2 { font-size: 40px; }
+  .contact-copy .contact-details { flex-direction: column; }
+}
+@media (max-width: 760px) {
+  .contact.section { grid-template-columns: 1fr; }
+  .contact .contact-image { min-height: 0; height: auto; aspect-ratio: 4 / 3; }
+  .contact .contact-image img { object-position: center; }
+  .contact-copy { padding: 54px 7% 60px; }
+}

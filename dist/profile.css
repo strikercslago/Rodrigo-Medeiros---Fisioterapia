@@ -1,0 +1,74 @@
+/* Professional profile: original portrait and accessible editorial content. */
+.profile-section { background: var(--paper); padding: 110px 6% 118px; overflow: hidden; }
+.profile-layout { max-width: 1400px; margin: auto; display: grid; grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr); grid-template-areas: 'portrait heading' 'portrait quote' 'portrait bio' 'portrait benefits' 'portrait action'; column-gap: clamp(60px, 5vw, 100px); row-gap: 26px; align-items: start; }
+.profile-heading { grid-area: heading; padding-top: 12px; }
+.profile-heading .eyebrow { font-size: 11px; letter-spacing: .16em; gap: 18px; margin-bottom: 27px; white-space: nowrap; }
+.profile-heading .eyebrow > span { flex: 1; height: 1px; background: #d7bfc3; }
+.profile-heading h2 { font-size: clamp(38px, 3.45vw, 57px); line-height: 1.15; letter-spacing: -.03em; }
+.profile-portrait { grid-area: portrait; position: relative; isolation: isolate; margin: 0 0 30px; align-self: center; }
+.profile-portrait::before { content: ''; position: absolute; z-index: -1; inset: 9% 16% -3% -24px; background: var(--wine); border-radius: 7px; }
+.profile-portrait::after { content: ''; position: absolute; z-index: -2; top: -36px; right: -28px; width: 64%; height: 60%; border: 1px solid #60283720; border-radius: 50%; transform: rotate(24deg); }
+.profile-portrait > img { display: block; width: 100%; height: auto; aspect-ratio: 1176 / 1338; object-fit: cover; object-position: center; border-radius: 7px; }
+.profile-portrait figcaption { position: relative; margin: -43px 28px 0; padding: 24px 18px 21px; border: 1px solid #e6ddd3; border-radius: 8px; background: #fffdfa; box-shadow: 0 12px 25px #30221d0c; text-align: center; }
+.profile-portrait figcaption > span { display: block; font-family: var(--serif); font-size: clamp(26px, 2.1vw, 35px); line-height: 1.2; letter-spacing: -.025em; }
+.profile-portrait figcaption small { display: block; font-size: 10px; color: #5d5050; letter-spacing: .2em; margin-top: 9px; }
+.profile-portrait figcaption i { display: block; width: 32px; height: 1px; margin: 17px auto 0; background: var(--wine); }
+.profile-quote { grid-area: quote; position: relative; margin: 0; padding: 2px 0 2px 24px; border-left: 2px solid var(--wine); }
+.profile-quote > span { position: absolute; top: -36px; left: 12px; color: #6028370b; font-family: var(--serif); font-size: 125px; line-height: 1; pointer-events: none; }
+.profile-quote p { position: relative; font-family: var(--serif); font-size: 24px; font-style: italic; line-height: 1.5; color: #47403c; }
+.profile-bio { grid-area: bio; }
+.profile-bio p { font-size: 16px; line-height: 1.85; color: #756c65; }
+.profile-bio p + p { margin-top: 19px; }
+.profile-bio strong { color: var(--wine); font-weight: 600; }
+.profile-benefits { grid-area: benefits; list-style: none; padding: 24px 0 0; margin: 0; border-top: 1px solid var(--line); display: grid; grid-template-columns: 1.15fr .85fr 1.05fr; gap: 16px; }
+.profile-benefits li { display: flex; align-items: center; gap: 11px; min-width: 0; }
+.profile-benefits li + li { border-left: 1px solid var(--line); padding-left: 16px; }
+.profile-icon { width: 43px; height: 43px; flex: 0 0 43px; display: grid; place-items: center; border-radius: 50%; background: #eee7df; color: var(--wine); }
+.profile-icon svg { width: 25px; height: 25px; }
+.profile-benefits li > span:last-child { font-size: 12px; line-height: 1.65; color: #635956; }
+.profile-action { grid-area: action; padding-top: 4px; }
+.profile-cta { border-radius: 7px; gap: 26px; min-height: 58px; padding: 17px 28px; font-size: 16px; transition: background 300ms; }
+.profile-cta:hover { transform: none; }
+.profile-cta > span { transition: transform 300ms; }
+.profile-cta:hover > span { transform: translateX(4px); }
+.profile-section .profile-enter { animation: profile-rise 550ms ease both; }
+.profile-section .profile-portrait.profile-enter { animation-name: profile-photo; }
+.profile-benefits li:nth-child(2) { animation-delay: 70ms; }
+.profile-benefits li:nth-child(3) { animation-delay: 140ms; }
+@keyframes profile-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes profile-photo { from { opacity: 0; transform: scale(.98); } to { opacity: 1; transform: scale(1); } }
+@media (min-width: 901px) and (max-width: 1150px) {
+  .profile-section { padding: 80px 5%; }
+  .profile-layout { column-gap: 45px; row-gap: 23px; }
+  .profile-heading h2 { font-size: 37px; }
+  .profile-heading .eyebrow { font-size: 10px; letter-spacing: .09em; }
+  .profile-quote p { font-size: 21px; }
+  .profile-benefits { gap: 12px; }
+  .profile-benefits li { flex-direction: column; align-items: flex-start; }
+  .profile-benefits li + li { padding-left: 12px; }
+  .profile-portrait figcaption { margin-left: 15px; margin-right: 15px; }
+}
+@media (max-width: 900px) {
+  .profile-section { padding: 64px 24px 70px; }
+  .profile-layout { max-width: 620px; grid-template-columns: minmax(0, 1fr); grid-template-areas: 'heading' 'quote' 'portrait' 'bio' 'benefits' 'action'; gap: 28px; }
+  .profile-heading { padding: 0; }
+  .profile-heading .eyebrow { font-size: 10px; letter-spacing: .1em; margin-bottom: 22px; }
+  .profile-heading h2 { font-size: clamp(34px, 5.3vw, 48px); line-height: 1.18; }
+  .profile-quote { padding-left: 20px; }
+  .profile-quote p { font-size: 23px; }
+  .profile-portrait { margin: 12px 0 0 12px; }
+  .profile-portrait::before { left: -12px; bottom: 30px; }
+  .profile-portrait figcaption { margin: -32px 16px 0; padding: 22px 12px 18px; }
+  .profile-portrait figcaption > span { font-size: clamp(25px, 5vw, 32px); }
+  .profile-portrait figcaption small { font-size: 9px; letter-spacing: .15em; }
+  .profile-benefits { grid-template-columns: 1fr; gap: 18px; padding-top: 24px; }
+  .profile-benefits li + li { border-left: 0; padding-left: 0; }
+  .profile-benefits li > span:last-child { font-size: 15px; }
+  .profile-benefits br { display: none; }
+  .profile-cta { width: 100%; font-size: 15px; gap: 20px; padding-left: 18px; padding-right: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .profile-section .profile-enter { animation: none; }
+  .profile-cta, .profile-cta > span { transition: none; }
+  .profile-cta:hover > span { transform: none; }
+}

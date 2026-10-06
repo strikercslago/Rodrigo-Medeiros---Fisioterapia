@@ -1,0 +1,72 @@
+/* Third section: editorial introduction and six photographic treatment cards. */
+.tx-section { background: #f5f1eb; position: relative; isolation: isolate; clip-path: inset(0); padding: clamp(72px, 7vw, 116px) 5.5%; }
+.tx-layout { max-width: 1400px; margin: auto; display: grid; grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr); gap: clamp(42px, 5vw, 80px); align-items: start; }
+.tx-editorial { padding-top: 22px; }
+.tx-editorial .eyebrow { font-size: 11px; letter-spacing: .16em; }
+.tx-editorial h2 { font-size: clamp(42px, 3.9vw, 62px); line-height: 1.09; letter-spacing: -.028em; }
+.tx-editorial > p { max-width: 380px; font-size: 17px; line-height: 1.75; margin: 28px 0; color: #6d645e; }
+.tx-cta { gap: 20px; border-radius: 7px; font-size: 14px; padding: 16px 23px; }
+.tx-pillars { list-style: none; padding: 28px 0 0; margin: 40px 0 0; border-top: 1px solid #dcd0c7; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; max-width: 450px; }
+.tx-pillars li { display: flex; flex-direction: column; gap: 14px; }
+.tx-pillars svg { width: 29px; height: 29px; color: var(--wine); }
+.tx-pillars span { font-size: 13px; line-height: 1.6; color: #665c56; }
+.tx-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; scroll-margin-top: 120px; }
+.tx-card { display: flex; flex-direction: column; min-width: 0; border: 1px solid #e7ded5; border-radius: 15px; overflow: hidden; background: #fffdfa; padding: 0; text-align: left; color: var(--ink); cursor: pointer; transition: border-color 350ms, box-shadow 350ms; }
+.tx-media { display: block; width: 100%; aspect-ratio: 3 / 2; overflow: hidden; background: #eae1d7; }
+.tx-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 400ms ease; }
+.tx-media .tx-photo-fisioterapia { object-position: 54% 100%; }
+.tx-media .tx-photo-osteopatia { object-position: 48% 48%; }
+.tx-media .tx-photo-dor-cronica { object-position: 50% 72%; }
+.tx-media .tx-photo-atm-dtm { object-position: 50% 100%; }
+.tx-media .tx-photo-pilates { object-position: 50% 30%; }
+.tx-card-body { display: flex; align-items: center; gap: 12px; padding: 18px 18px 20px; flex: 1; }
+.tx-card-copy { flex: 1; min-width: 0; display: block; }
+.tx-card-title { display: block; font-family: var(--serif); font-size: clamp(21px, 1.7vw, 27px); letter-spacing: -.025em; line-height: 1.15; }
+.tx-card-description { display: block; font-size: 14px; line-height: 1.55; margin-top: 7px; color: #776c64; }
+.tx-arrow { display: grid; place-items: center; width: 34px; height: 34px; flex: 0 0 34px; border-radius: 50%; background: #f2eae1; color: var(--wine); transition: background 350ms, color 350ms; }
+.tx-card:hover, .tx-card:focus-visible { border-color: #b08c8f; box-shadow: 0 5px 18px #60283708; }
+.tx-card:hover .tx-media img { transform: scale(1.03); }
+.tx-card:hover .tx-arrow, .tx-card:focus-visible .tx-arrow { background: var(--wine); color: white; }
+.tx-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; height: 100%; gap: 14px; background: #eae1d7; color: #875c62; }
+.tx-placeholder svg { width: 54px; height: 54px; }
+.tx-placeholder span { font-size: 12px; letter-spacing: .08em; }
+.tx-dialog { width: min(620px, calc(100vw - 40px)); max-height: 85svh; padding: 52px 38px 36px; border-radius: 14px; }
+.tx-dialog .eyebrow { font-size: 10px; padding-right: 22px; }
+.tx-dialog h2 { font-size: 38px; color: var(--wine); }
+.tx-dialog h3 { font-size: 18px; font-weight: 500; line-height: 1.5; margin: 22px 0 14px; }
+.tx-dialog > p { text-align: left; font-size: 16px; line-height: 1.8; padding: 0; margin-bottom: 26px; }
+.tx-close { position: absolute; top: 10px; right: 12px; width: 40px; height: 40px; border: 0; background: transparent; font-size: 30px; color: var(--wine); cursor: pointer; }
+.tx-card.tx-reveal { animation: tx-arrive 520ms ease both; }
+@keyframes tx-arrive { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+@media (min-width: 761px) and (max-width: 1100px) {
+  .tx-layout { grid-template-columns: 1fr; gap: 44px; max-width: 860px; }
+  .tx-editorial { padding: 0; }
+  .tx-editorial h2 { font-size: 52px; }
+  .tx-editorial > p { max-width: 600px; }
+  .tx-pillars { max-width: 600px; }
+  .tx-card-title { font-size: 27px; }
+}
+@media (max-width: 760px) {
+  .tx-section { padding: 60px 24px 64px; }
+  .tx-layout { grid-template-columns: minmax(0, 1fr); gap: 36px; max-width: 560px; }
+  .tx-editorial { padding: 0; }
+  .tx-editorial h2 { font-size: clamp(38px, 8.3vw, 52px); line-height: 1.12; }
+  .tx-editorial .eyebrow { font-size: 10px; letter-spacing: .1em; }
+  .tx-editorial > p { font-size: 16px; margin: 24px 0; }
+  .tx-cta { width: 100%; padding: 16px; gap: 12px; font-size: 13px; }
+  .tx-pillars { gap: 14px; margin-top: 30px; padding-top: 26px; }
+  .tx-pillars span { font-size: 12px; }
+  .tx-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .tx-media { aspect-ratio: 4 / 3; }
+  .tx-card-title { font-size: 28px; }
+  .tx-card-body { padding: 20px; }
+  .tx-dialog { padding: 48px 24px 28px; }
+  .tx-dialog h2 { font-size: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tx-card.tx-reveal { animation: none; }
+  .tx-card, .tx-media img, .tx-arrow { transition: none; }
+}
+.tx-photo-vestibular { object-position: 50% 35%; }
+
+.tx-section::before { content: ''; position: fixed; inset: 0; z-index: -1; pointer-events: none; background: url('assets/textura-creme-tratamentos-duvidas.png') center / cover no-repeat; }
