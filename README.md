@@ -26,5 +26,10 @@ Borgonha, marfim, grafite e fotografia real. Hierarquia editorial, tratamentos e
 Executar `python -m http.server 4173 --bind 127.0.0.1 --directory dist` nesta pasta e abrir http://127.0.0.1:4173.
 
 ## Verificação
-Sintaxe JavaScript, existência de arquivos de imagem e destinos de navegação verificados. Resposta HTTP 200 na prévia local. Revisão visual no navegador realizada em desktop e celular. Sem rolagem horizontal em 1440 e 390 px. Acordeão de tratamentos, galeria em modal e menu móvel verificados. A publicação privada foi bloqueada pela revisão automática de aprovação, aguardando autorização explícita do usuário para envio ao Sites.
+Sintaxe JavaScript, existência de arquivos de imagem e destinos de navegação verificados. Resposta HTTP 200 na prévia local. Revisão visual no navegador realizada em desktop e celular. Sem rolagem horizontal em 1440 e 390 px. Acordeão de tratamentos, galeria em modal e menu móvel verificados. Publicação preparada para GitHub e Netlify; consulte NETLIFY.md.
 
+
+## Hospedagem atual
+Repositório: https://github.com/strikercslago/Rodrigo-Medeiros---Fisioterapia
+
+Branch de produção: `main`. Configuração automática em `netlify.toml`. Instruções completas em [NETLIFY.md](NETLIFY.md).
