@@ -19,4 +19,13 @@
   footer .brand-name em { font-size: clamp(22px, 6.3vw, 26px); margin-left: clamp(18px, 7vw, 40px); }
   footer .brand-sub { font-size: clamp(5px, 1.55vw, 7px); }
   footer > p { overflow-wrap: anywhere; font-size: clamp(17px, 4.8vw, 20px); }
+}/* Official supplied logo: preserve proportions and the full artwork. */
+.header .brand { width: 154px; flex-shrink: 0; }
+.brand .brand-logo { width: 100%; height: auto; object-fit: contain; }
+.header .brand-logo { max-height: 88px; }
+footer .brand { width: 210px; }
+@media(max-width:760px) {
+  .header .brand { width: 110px; }
+  .header .brand-logo { max-height: 72px; }
+  footer .brand { width: 100%; max-width: 166px; }
 }
