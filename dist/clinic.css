@@ -24,4 +24,7 @@
 .trajectory .clinic-frame { height: 320px; width: 427px; }
 .trajectory .clinic-frame img { object-fit: contain; }
 .trajectory .eyebrow { font-size: 10px; }
+.trajectory .clinic-frame.trajectory-certificate { width: 256px; aspect-ratio: 4 / 5; }
+.trajectory .trajectory-certificate img { object-fit: cover; object-position: 50% 50%; }
 @media(max-width:600px) { .trajectory .clinic-frame { width: 76vw; height: auto; aspect-ratio: 4 / 3; } .trajectory .eyebrow { font-size: 9px; letter-spacing: .09em; } }
+@media(max-width:600px) { .trajectory .clinic-frame.trajectory-certificate { width: 45.6vw; aspect-ratio: 4 / 5; } }
