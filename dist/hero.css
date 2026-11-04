@@ -164,3 +164,8 @@ h2 { letter-spacing: -.025em; line-height: 1.17; }
 }
 @keyframes hero-mobile-fade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes hero-mobile-arrive { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Keep the portrait and wall logo below the navigation on wide screens. */
+@media (min-width: 761px) {
+  .hero-background { object-position: center top; }
+}
